@@ -66,7 +66,11 @@ export default {
     center: {
       type: Boolean,
       default: false
-    }
+    },
+    container: {
+      required: true,
+      type: String,
+    },
   },
   data () {
     return {

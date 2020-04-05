@@ -9,19 +9,15 @@ export default {
     window.addEventListener('resize', this.getWindowSize)
     this.getWindowSize()
   },
-  mounted () {
-    this.getWindowSize()
-  },
+
   beforeDestroy () {
     window.removeEventListener('resize', this.getWindowSize)
   },
 
   methods: {
     getWindowSize () {
-      if (this.$el) {
-        this.windowHeight = this.$el.clientHeight
-        this.windowWidth = this.$el.clientWidth
-      }
+      this.windowHeight = document.getElementById(this.container).offsetHeight
+      this.windowWidth = document.getElementById(this.container).offsetWidth
     }
   }
 }

@@ -43,7 +43,7 @@ export default {
   },
   data () {
     return {
-      animate: true,
+      animate: false,
       dragging: false,
 
       shiftStartX: 0,
@@ -67,6 +67,11 @@ export default {
           this.zIndex = 1
         }
       }, false)
+    // switch off animate on init
+    setTimeout(() => {
+      this.animate = true;
+    }, 1)
+
   },
   computed: {
     className () {
